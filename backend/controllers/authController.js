@@ -12,6 +12,8 @@ async function hashPassword(password) {
 
 // Function to handle user login
 async function loginUser(req, res) {
+    
+
     const { inputUsername, inputPassword } = req.body;
     console.log(`Login attempt for user ${inputUsername}`);
     console.log(`Password: ${inputPassword}`);
@@ -33,6 +35,7 @@ async function loginUser(req, res) {
     } else {
         res.status(401).json({ message: "Invalid credentials" });
     }
+
 }
 
 module.exports = { loginUser };
