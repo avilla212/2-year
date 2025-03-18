@@ -1,8 +1,10 @@
-require("dotenv").config(); 
+require("dotenv").config({ path: __dirname + "/../.env" }); // Load .env with explicit path
 
-// Config for a single predfined user 
+console.log("🔹 DEBUG: Checking .env file...");
+console.log("🔹 Correct user:", process.env.USERNAME || "NOT LOADED");
+console.log("🔹 Correct password:", process.env.HASHED_PASSWORD || "NOT LOADED");
+
 module.exports = {
-    correctUser: process.env.CORRECT_USER,
-    correctPassword: process.env.CORRECT_PASSWORD
-}
-
+    username: process.env.USERNAME || "Kate",
+    hashedPassword: process.env.HASHED_PASSWORD || null
+};

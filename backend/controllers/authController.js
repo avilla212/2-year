@@ -13,6 +13,8 @@ async function hashPassword(password) {
 // Function to handle user login
 async function loginUser(req, res) {
     const { inputUsername, inputPassword } = req.body;
+    console.log(`Login attempt for user ${inputUsername}`);
+    console.log(`Password: ${inputPassword}`);
 
     // Check if username matches the predefined username
     if (inputUsername !== username) {
@@ -22,8 +24,12 @@ async function loginUser(req, res) {
     // Hash the entered password and compare with stored hash
     const hashedInputPassword = await hashPassword(inputPassword);
 
+    console.log(`Hashed password: ${hashedInputPassword}`);
+    console.log(`Stored password: ${hashedPassword}`);
+
+    // Validate username and password
     if (hashedInputPassword === hashedPassword) {
-        res.json({ message: "Login successful!" });
+        res.status(200).json({ message: "Login successful" });
     } else {
         res.status(401).json({ message: "Invalid credentials" });
     }
