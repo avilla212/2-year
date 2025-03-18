@@ -1,0 +1,76 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centering Content */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+#login-container, #homepage-container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10pz rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Buttons */
+input { 
+    display:  block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    
+    /* Transition */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover { 
+    background: #0056b3;
+    /* Smooth pop affect */
+    transform: scale(1.05);
+
+}
+
+@media (max-width: 600px) {
+    #login-container, #dashboard-container {
+        padding: 15px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
