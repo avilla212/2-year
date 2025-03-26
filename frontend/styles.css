@@ -135,28 +135,32 @@ button:hover {
 
 /* 3x3 grid to display photos of our relationship */
 .header-container {
-    /* 3 by 3 grid */
     display: grid;
-    /* Creates 3 equal columns */
-    grid-template-columns: repeat(3,1fr);
-    /* Space between images */
-    gap: 10px; 
-    /* Adjust width to fit content */
-    max-width: 300px;
-    /* Center the grid */
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    grid-template-rows: repeat(3, auto);  /* Ensures 3 rows */
+    gap: 10px;
+    max-width: 600px; /* Restrict max width for alignment */
+    margin: 0 auto; /* Center the grid */
 }
 
 /* Grid items for the header-container */
 .header-grid-item{
     
-    width: 50%; /* Ensure images scale correctly */
-    aspect-ratio: 1 / 1; /* Keeps images square */
-    object-fit: cover; /* Makes sure images fill space */
-    border-radius: 8px; /* Optional: Rounds the edges slightly */
+    width: 100%; /* Makes images fill their grid cell */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    object-fit: cover; /* Ensures images fit without distortion */
+    border-radius: 8px; /* Optional: Rounded corners */
+    max-width: 350px; /* Set a reasonable width for each image */
+    height: 350px; /* Fixed height to keep uniformity */
 }
 
-
+/* Homepage background */
+.homepage-background {
+    background: url("./images/matcha-homepage-background.jpg") no-repeat center center;
+    background-size: cover;  /*  This makes sure the image covers the whole screen */
+    background-attachment: fixed;  /* Keeps it in place when scrolling */
+    background-position: center; /* Ensures it stays centered */
+  }
 
 
 /* Responsive: Hide thought bubble on small screens */
@@ -184,8 +188,23 @@ button:hover {
         font-size: 14px;
         padding: 10px;
     }
-}
+};
 
+/* Responsive adjustments for header grid items */
+@media (max-width: 768px) {
+    .image-grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 column on smaller screens */
+      grid-template-rows: auto; /* Allows dynamic row sizing */
+      max-width: 90%; /* Adjust width to fit mobile */
+    }
+  }
+
+@media (max-width: 480px) {
+    /* Change to one column on smaller screens */
+    .header-grid-item {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
 /* Page wrapper */
 .page-wrapper {
     display: flex;
