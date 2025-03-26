@@ -1,0 +1,26 @@
+The Express Backend:
+
+(Server.js)
+
+- Serves the frontend files and handles the API request 
+- Starts the express server on port 3000
+
+(Routes dir): Defines API routes
+
+- This is where we handle routing and handling the login user
+- We call the controller to verify credentials
+- This will send a success or failure response to the frontend
+
+- Receives login request from the frontend (scripts.js)
+- calls the controller to verify credentials
+- Sends success or failure response to the frontend
+
+(Controllers): Handles login logic
+
+- Checks if the username and password are correct
+- Hashes the entered password and compares it to the stored hash
+- Sends success or failure response
+
+- Receives login requests from our routes
+- Hashes the entered password and comapres it with the config
+- Sends a success or failure response back to the fronted

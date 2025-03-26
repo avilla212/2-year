@@ -7,17 +7,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="login-container">
-    <h2>Login</h2>
-    <form id="login-form">
-      <input type="text" id="username" name="username" placeholder="Username" required>
-      <input type="password" id="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-    <p id="error-message" class="hidden"> Invalid username or password</p>
+  <div class="page-wrapper">
+    <!-- Totoro -->
+    <img src="./images/totoro-login.png" alt="Totoro" class="totoro">
+
+    <!-- Login block -->
+    <div id="login-container">
+      <img src="./images/ghibli.jpeg" alt="Ghibli" class="ghibli-logo">
+      <form id="login-form">
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="error-message" class="hidden">Invalid username or password</p>
+    </div>
   </div>
+
   <script src="scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
-
 </body>
+
 </html>
